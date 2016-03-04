@@ -19,15 +19,34 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-4 col-lg-offset-4"><!--middle list--->
+        <div class="col-lg-4"><!-- haters list-->
+          <ul ng-show="show">
+            <li ng-repeat='singleHater in haterList' >
+              {{singleHater}}
+               <span class="glyphicon glyphicon-remove" ng-click='deleteHaters($index)'></span>
+
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-4"><!--middle list--->
           <ul>
             <li ng-repeat='singleJob in jobList'>
                 {{singleJob}}
-                 <button class="btn btn-danger btn-sm" ng-click='deleteData($index)'>X</button>
+                 <span class="glyphicon glyphicon-remove" ng-click='deleteData($index)'></span>
+                 <span class="glyphicon glyphicon-chevron-left" ng-click="addHaters($index)"></span>
+                 <span class="glyphicon glyphicon-chevron-right" ng-click="addLovers($index)"></span>
+
+          </ul>
+        </div>
+        <div class="col-lg-4"><!-- lovers list-->
+          <ul>
+            <li ng-repeat='singleLover in loversList'>
+              {{singleLover}}
+               <span class="glyphicon glyphicon-remove" ng-click='deleteLovers($index)'></span>
             </li>
           </ul>
-
         </div>
+             {{message}}
       </div>
     </div>
    <script src="js/main.js"></script>

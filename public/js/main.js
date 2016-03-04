@@ -2,18 +2,24 @@ var app = angular.module('ngTracker', []);
 
 
 app.controller('TrackerController', function($scope){
-   //place holder array 1 of 3
+   // the 3 arrays
    $scope.jobList = ['Target',
                     'Walmart',
                     'capsule corp',
                     'umbrella corp',
                     'Valve'];
 
+   $scope.haterList = ['Test value'];
+   $scope.loversList= ['Test value'];
+   $scope.show = true;
+
+
+
    /// adds to job list of yet to apply
    $scope.saveData = function(){
-     var jobName = $scope.currentData;
-     $scope.jobList.push(jobName);
-     $scope.currentData="";
+         var jobName = $scope.currentData;
+         $scope.jobList.push(jobName);
+         $scope.currentData="";
    }
 
   //remove from list
@@ -23,5 +29,40 @@ app.controller('TrackerController', function($scope){
 
   }
 
+  //add to haters list
+  $scope.addHaters = function($index){
+
+    var moveItem = $scope.jobList.splice($index, 1)
+    moveItem = String(moveItem)
+    $scope.haterList.push(moveItem)
+
+    if ($scope.haterList.length === 5){
+
+           $scope.show= false;
+
+      }
+
+  }
+
+  //remove from haters list
+  $scope.deleteHaters = function($index){
+    $scope.haterList.splice($index, 1)
+
+
+  }
+
+  //add to lovers list
+  $scope.addLovers = function($index){
+
+    var moveItem = $scope.jobList.splice($index, 1)
+    moveItem = String(moveItem)
+    $scope.loversList.push(moveItem)
+
+
+  }
+  //remove lovers
+  $scope.deleteLovers = function($index){
+    $scope.loversList.splice($index, 1)
+  }
 
 });
