@@ -15,11 +15,19 @@ app.controller('TrackerController', function($scope){
 
 
 
-   /// adds to job list of yet to apply
+   /// adds to job list of yet to apply, will react if string is empty
    $scope.saveData = function(){
-         var jobName = $scope.currentData;
+         var jobName = $scope.currentData
+
+      if(jobName = " "){
+          $scope.message = "This is why you don't trust the user..."
+
+       }
+       else{
          $scope.jobList.push(jobName);
          $scope.currentData="";
+
+       }
    }
 
   //remove from list
