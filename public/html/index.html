@@ -25,23 +25,26 @@
       <div class="row">
         <div class="col-lg-12">
            <div class="form-group">
-             <input type="text" class="form-control" placeholder="Where Do you want to apply?" ng-model='currentData'>
-             <button class="btn" ng-click='saveData()' type="button">Add it to the List</button>
+             <input id="input" type="text" class="form-control" placeholder="Where Do you want to apply?" ng-model='currentData'>
+              <center><button class="btn" ng-click='saveData()' type="button">Add it to the List</button></center>
            </div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-4"><!-- haters list-->
-          <ul ng-show="show">
+         <center>
+          <ul ng-show="show" class="listStyle">
             <li ng-repeat='singleHater in haterList' >
               {{singleHater}}
                <span class="glyphicon glyphicon-remove" ng-click='deleteHaters($index)'></span>
 
             </li>
           </ul>
-          <img src="img/goku.gif" alt="" ng-show="!show">
+         </center>
+         <img src="img/goku.gif" alt="" ng-show="!show">
         </div>
         <div class="col-lg-4"><!--middle list--->
+         <center>
           <ul>
             <li ng-repeat='singleJob in jobList'>
                 {{singleJob}}
@@ -50,16 +53,19 @@
                  <span class="glyphicon glyphicon-chevron-right" ng-click="addLovers($index)"></span>
 
           </ul>
+        </center>
         </div>
         <div class="col-lg-4"><!-- lovers list-->
+          <center>
           <ul>
             <li ng-repeat='singleLover in loversList'>
               {{singleLover}}
                <span class="glyphicon glyphicon-remove" ng-click='deleteLovers($index)'></span>
             </li>
           </ul>
+         </center>
         </div>
-             {{message}}
+             {{message}} <!--- this will have its own box-->
       </div>
     </div>
    <script src="js/main.js"></script>
