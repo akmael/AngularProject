@@ -1,3 +1,6 @@
+body{
+  font-family: 'Permanent Marker', cursive;
+}
 /*Header styling*/
 #banner{
   width:100%;
@@ -15,12 +18,12 @@
    color: #ffffff;
    position: absolute;
    top: 20px;
-   left: 25%;
+   left: 18%;
    margin-left: 20px;
 
 }
 .apptitle h1{
-  font-size: 80px;
+  font-size: 5em;
 }
 
 
@@ -28,13 +31,26 @@
 ul{
   list-style: none;
 }
+p{
+  background-color: yellow;
+  border-radius: 10px;
+  width: 300px;
+}
+.form-control{
+  height: 50px;
+}
+
 #input{
   width : 80%;
   margin: 0 auto;
+  box-shadow: inset 2px 2px 2px 0px #dddddd;
 }
 
 .btn{
   width: 80%;
   margin: 0 auto;
   background-color: #005B32;
+  font-weight: bold;
+  font-size: 25px;
+  color: #fff;
 }

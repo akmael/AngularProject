@@ -3,23 +3,19 @@ var app = angular.module('ngTracker', []);
 
 app.controller('TrackerController', function($scope){
    // the 3 arrays
-   $scope.jobList = ['Target',
-                    'Walmart',
-                    'capsule corp',
-                    'umbrella corp',
-                    'Valve'];
+   $scope.jobList = [];
 
-   $scope.haterList = ['Test value'];
-   $scope.loversList= ['Test value'];
+   $scope.haterList = [];
+   $scope.loversList= [];
    $scope.show = true;
 
 
 
    /// adds to job list of yet to apply, will react if string is empty
    $scope.saveData = function(){
-         var jobName = $scope.currentData
+     var jobName = $scope.currentData
 
-      if(jobName = " "){
+      if(jobName == null){
           $scope.message = "This is why you don't trust the user..."
 
        }
