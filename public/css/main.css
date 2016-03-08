@@ -46,11 +46,23 @@ p{
   box-shadow: inset 2px 2px 2px 0px #dddddd;
 }
 
-.btn{
+#btn{
   width: 80%;
   margin: 0 auto;
   background-color: #005B32;
   font-weight: bold;
   font-size: 25px;
   color: #fff;
+}
+/*Animation*/
+
+.animate-show, .animate-hide{
+
+  transition: 1s linear all;
+  opacity: 0:
+
+}
+
+.animate-show.animate-show-active {
+	opacity: 1;
 }

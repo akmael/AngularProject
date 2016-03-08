@@ -1,4 +1,4 @@
-var app = angular.module('ngTracker', []);
+var app = angular.module('ngTracker', ['ngAnimate']);
 
 
 app.controller('TrackerController', function($scope){
@@ -7,21 +7,26 @@ app.controller('TrackerController', function($scope){
 
    $scope.haterList = [];
    $scope.loversList= [];
-   $scope.show = true;
 
+//show or hide things
+   $scope.show = true;
+   $scope.bool = false;
 
 
    /// adds to job list of yet to apply, will react if string is empty
    $scope.saveData = function(){
      var jobName = $scope.currentData
 
-      if(jobName == null){
+        console.log(jobName)
+
+      if(jobName == null || jobName == ""){
           $scope.message = "This is why you don't trust the user..."
 
        }
        else{
          $scope.jobList.push(jobName);
          $scope.currentData="";
+         $scope.bool = true;
 
        }
    }
@@ -46,6 +51,11 @@ app.controller('TrackerController', function($scope){
 
       }
 
+  }
+  //reveal list
+  $scope.reveal= function(){
+
+    $scope.show = true;
   }
 
   //remove from haters list
