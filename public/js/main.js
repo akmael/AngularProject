@@ -19,9 +19,9 @@ app.controller('TrackerController', function($scope){
 
         console.log(jobName)
 
-      if(jobName == null || jobName == ""){
+      if(jobName == null || jobName == "" ){
           $scope.message = "This is why you don't trust the user..."
-
+          $scope.bool= false;
        }
        else{
          $scope.jobList.push(jobName);
